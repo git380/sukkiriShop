@@ -35,7 +35,7 @@ public class Shohin implements Serializable {
         return code;
     }
 
-    public void setCode(int String) {
+    public void setCode(String code) {
         this.code = code;
     }
 

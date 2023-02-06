@@ -66,4 +66,52 @@ public class ShohinDAO extends DAOParam {
         }
         return resultList;
     }
+
+
+    /*ダメだった
+    public Shohin findByCode(String code) throws SQLException {
+        Shohin shohin = new Shohin();
+        // データベース接続
+        try (Connection conn = DriverManager.getConnection(
+                JDBC_URL, DB_USER, DB_PASS)) {
+            // SELECT文の準備
+            String sql = "SELECT * FROM shohin WHERE code = ?";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, code);
+            ResultSet rs = pStmt.executeQuery();
+
+            if (rs.next()) {
+                shohin.setCode(rs.getString("code"));
+                shohin.setName(rs.getString("name"));
+                shohin.setPrice(rs.getInt("price"));
+            } else {
+                return null;
+            }
+        }
+        return shohin;
+    }*/
+
+    public Shohin findByCode(String code) {
+        // データベース接続
+        try (Connection conn = DriverManager.getConnection(
+                JDBC_URL, DB_USER, DB_PASS)) {
+            // SELECT文の準備
+            String sql = "SELECT * FROM Shohin WHERE code = ?";
+            PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, code);
+            // SELECTを実行
+            ResultSet rs = pStmt.executeQuery();
+
+            if (rs.next()) {
+                Shohin shohin = new Shohin();
+                shohin.setCode(rs.getString("code"));
+                shohin.setName(rs.getString("name"));
+                shohin.setPrice(rs.getInt("price"));
+                return shohin;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
