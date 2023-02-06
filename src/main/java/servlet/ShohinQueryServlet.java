@@ -16,27 +16,30 @@ public class ShohinQueryServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get the parameter
+        // パラメータを取得する
         String cmd = request.getParameter("cmd");
         String keyword = request.getParameter("keyword");
 
-        // Define variables
+        System.out.println("cmd:" + cmd);
+        System.out.println("keyword:" + keyword);
+
+        // 変数の定義
         ShohinQueryLogic logic = new ShohinQueryLogic();
         ArrayList<Shohin> shohinList = null;
 
-        // Determine the action based on the cmd parameter
-        if (cmd == null || cmd.equals("")) { // First time: no cmd specified
-            shohinList = new ArrayList<Shohin>(); // Generate an empty result list
-        } else if (cmd.equals("query")) { // Form call: cmd = "query"
-            shohinList = logic.execute(keyword); // Search by product name
-        } else { // Form call: cmd = "price"
-            shohinList = logic.execute(Integer.parseInt(keyword)); // Search by price * There is a possibility of exception depending on the input value
+        // cmdパラメータに基づいたアクションを決定する
+        if (cmd == null || cmd.equals("")) { // 初回：cmdを指定しない
+            shohinList = new ArrayList<Shohin>(); // 空の結果リストを生成する
+        } else if (cmd.equals("query")) { // フォームの呼び出し: cmd = "query"
+            shohinList = logic.execute(keyword); // 製品名で探す
+        } else { // フォーム呼び出し: cmd = "price"
+            shohinList = logic.execute(Integer.parseInt(keyword)); // 価格から探す ※入力値により例外が発生する可能性があります。
         }
 
-        // Set the result list to the request scope
+        // リクエストスコープに結果リストを設定する
         request.setAttribute("shohinList", shohinList);
 
-        // Forward
+        // Forward(フォワード)
         request.getRequestDispatcher("/WEB-INF/jsp/shohinquery.jsp").forward(request, response);
     }
 }
