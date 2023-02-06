@@ -9,15 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1278b3a3-6aed-4a83-9833-6b0cf71644b9" name="変更" comment="FirstCommit">
+    <list default="true" id="1278b3a3-6aed-4a83-9833-6b0cf71644b9" name="変更" comment="教科書完成">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/DAOParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ShohinDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Shohin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/ShohinQueryLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/ShohinQueryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/shohinquery.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/loginOK.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/loginOK.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -195,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675324254293</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="教科書完成">
+      <created>1675643548033</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675643548033</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +235,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="FirstCommit" />
     <MESSAGE value="list14-1_14-11" />
-    <option name="LAST_COMMIT_MESSAGE" value="list14-1_14-11" />
+    <MESSAGE value="教科書完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="教科書完成" />
   </component>
 </project>
