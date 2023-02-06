@@ -7,9 +7,7 @@
     <title>スッキリ商店</title>
 </head>
 <body>
-<c:forEach var="i" begin="1" end="5">
-    <p>ようこそ<c:out value="${userId}"/>さん</p>
-</c:forEach>
+<p>ようこそ<c:out value="${userId}"/>さん</p>
 <a href="/sukkiriShop/WelcomeServlet">トップへ</a>
 </body>
 </html>
