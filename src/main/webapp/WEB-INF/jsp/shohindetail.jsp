@@ -23,7 +23,8 @@
     </tr>
     <tr>
         <th>
-            <form action="<%=request.getContextPath()%>/CartServlet" method="post">
+<%--            <form action="<%=request.getContextPath()%>/CartServlet" method="post">--%>
+            <form action="/sukkiriShop/CartServlet" method="post">
                 <input type="hidden" name="cmd" value="add">
                 <input type="hidden" name="code" value="${shohin.code}">
                 数量:
