@@ -32,6 +32,6 @@
     合計金額: ${total}円<br>
 </c:if>
 <br>
-<a href="/sukkiriShop/">トップページへ戻る</a>
+<a href="/sukkiriShop/WelcomeServlet">トップページへ戻る</a>
 </body>
 </html>
