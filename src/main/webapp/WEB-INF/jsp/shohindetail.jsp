@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,8 @@
         <th colspan="2">${shohin.name}</th>
     </tr>
     <tr>
-        <th rowspan="3"><img src="/sukkiriShop/img/${shohin.image}"></td>
+        <th rowspan="3"><img src="/sukkiriShop/img/${shohin.image}">
+        </td>
         <th>内容量:${shohin.vol}</th>
     </tr>
     <tr>
@@ -23,7 +24,7 @@
     </tr>
     <tr>
         <th>
-<%--            <form action="<%=request.getContextPath()%>/CartServlet" method="post">--%>
+            <%--            <form action="<%=request.getContextPath()%>/CartServlet" method="post">--%>
             <form action="/sukkiriShop/CartServlet" method="post">
                 <input type="hidden" name="cmd" value="add">
                 <input type="hidden" name="code" value="${shohin.code}">
@@ -47,6 +48,6 @@
         <th colspan="2">${shohin.comment}</th>
     </tr>
 </table>
-<input type="button" value="戻る" onClick='history.back();' />
+<input type="button" value="戻る" onClick='history.back();'/>
 </body>
 </html>

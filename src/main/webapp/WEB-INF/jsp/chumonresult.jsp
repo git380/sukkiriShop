@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
                 <td>${result.price}円</td>
                 <td>${result.quantity * result.price}円</td>
             </tr>
-            <c:set var="total" value="${total + (result.quantity * result.price)}" /><!-- 合計計算 -->
+            <c:set var="total" value="${total + (result.quantity * result.price)}"/><!-- 合計計算 -->
         </c:forEach>
     </table>
     合計金額: ${total}円<br>

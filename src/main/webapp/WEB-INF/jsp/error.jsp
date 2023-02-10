@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>エラー画面</title>
+    <meta charset="UTF-8">
+    <title>エラー画面</title>
 </head>
 <body>
 <h1>エラーが発生しました</h1>

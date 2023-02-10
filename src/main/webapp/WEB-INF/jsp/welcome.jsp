@@ -16,6 +16,7 @@
     </c:if>
     <c:if test="${not empty sessionScope.userId}">
         <li><a href="/sukkiriShop/LogoutServlet">ログアウト</a></li>
+        <li><a href="/sukkiriShop/DeleteUserServlet">ユーザ削除</a></li>
     </c:if>
     <li><a href="/sukkiriShop/ShohinQueryServlet">ショップ</a></li>
     <li><a href="/sukkiriShop/CartServlet">カート</a></li>

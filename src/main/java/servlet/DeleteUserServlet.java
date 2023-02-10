@@ -1,8 +1,6 @@
 package servlet;
 
-import dao.AccountDAO;
 import model.Account;
-import model.Login;
 import model.LoginLogic;
 
 import java.io.IOException;
@@ -13,36 +11,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/DeleteUserServlet")
+public class DeleteUserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         // フォワード
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/delete.jsp");
         dispatcher.forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // リクエストパラメータの取得
-        request.setCharacterEncoding("UTF-8");
+        // 削除するユーザのIDを取得
         String userId = request.getParameter("userId");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String name = request.getParameter("name");
-        int age = Integer.parseInt(request.getParameter("age"));
 
-        // 登録処理の実行
-        Account account = new Account(userId, password, email, name, age);
+        // 削除処理の実行
         LoginLogic bo = new LoginLogic();
-        bo.newAccount(account);
+        bo.delAccount(userId);
 
-        System.out.println(userId + password + email + name + age);
+        /*// 削除結果に応じてメッセージを設定
+        if (result) {
+            request.setAttribute("message", "ユーザの削除が完了しました");
+        } else {
+            request.setAttribute("message", "ユーザの削除に失敗しました");
+        }*/
 
-        response.sendRedirect("/sukkiriShop/LoginServlet");
+        response.sendRedirect("/sukkiriShop/");
     }
 }
 

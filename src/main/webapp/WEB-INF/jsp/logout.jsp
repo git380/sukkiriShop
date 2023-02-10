@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>スッキリ商店</title>
+    <meta charset="UTF-8">
+    <title>スッキリ商店</title>
 </head>
 </head>
 <body>
