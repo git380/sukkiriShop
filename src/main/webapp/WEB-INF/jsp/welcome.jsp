@@ -20,6 +20,7 @@
     </c:if>
     <li><a href="/sukkiriShop/ShohinQueryServlet">ショップ</a></li>
     <li><a href="/sukkiriShop/CartServlet">カート</a></li>
+    <li><a href="/sukkiriShop/UpdateZaikoServlet">在庫追加</a></li>
 </ul>
 </body>
 </html>
