@@ -51,7 +51,7 @@ public class CartServlet extends HttpServlet {
 
         //もしもcartList がnull(未設定)ならば、新規作成してセッションに設定する
         if (cartList == null) {
-            cartList = new ArrayList<Cart>();
+            cartList = new ArrayList<>();
             session.setAttribute("cartList", cartList);
         }
 
@@ -80,6 +80,14 @@ public class CartServlet extends HttpServlet {
                     request.setAttribute("error", "不正な商品コードです"); // エラーメッセージを設定
                     //「/WEB-INF/jsp/error.jsp」にフォワードする。
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/error.jsp");
+                    dispatcher.forward(request, response);
+                    return;
+                }
+                //数量に「-」が入力された場合
+                if (quantity < 0) {
+                    // 負の値が入力されたときの処理
+                    request.setAttribute("error", "数量は0以上の整数を入力してください");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/cart.jsp");
                     dispatcher.forward(request, response);
                     return;
                 }
