@@ -56,18 +56,18 @@ public class ChumonServlet extends HttpServlet {
             //カートをクリアする
             session.removeAttribute("cartList");
             //注文結果画面にリダイレクト
-            response.sendRedirect("/プロジェクト名/ChumonServlet?cmd=result");
+            response.sendRedirect("/sukkiriShop/ChumonServlet?cmd=result");
         } catch (ZaikoException e) {
             //例外クラスをセッションスコープにセット
             session.setAttribute("e", e);
             //在庫メッセージ画面にリダイレクト
-            response.sendRedirect("/プロジェクト名/ChumonServlet?cmd=zaiko");
+            response.sendRedirect("/sukkiriShop/ChumonServlet?cmd=zaiko");
         } catch (ChumonException e) {
             e.printStackTrace(); //エラーの詳細をコンソールにも出力
             //例外クラスをセッションスコープにセット
             session.setAttribute("e", e);
             //エラー画面にリダイレクト
-            response.sendRedirect("/プロジェクト名/ChumonServlet?cmd=error");
+            response.sendRedirect("/sukkiriShop/ChumonServlet?cmd=error");
         }
     }
 }

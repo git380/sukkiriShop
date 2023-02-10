@@ -109,6 +109,6 @@ public class CartServlet extends HttpServlet {
                 return;
         }
         //カート画面表示:自分自身"CartServlet"にリダイレクト (doGet()が実行される)
-        response.sendRedirect("/プロジェクト名/CartServlet");
+        response.sendRedirect("/sukkiriShop/CartServlet");
     }
 }
