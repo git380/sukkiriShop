@@ -87,7 +87,7 @@ public class ChumonDAO extends DAOParam {
                         int result3 = pstmt3.executeUpdate();
                         if (result3 != 1) {
                             throw new ChumonException("商品コード(" + cart.getCode() +
-                            ") の在庫更新失敗しました");
+                                    ") の在庫更新失敗しました");
                         }
                     }
 

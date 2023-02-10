@@ -16,6 +16,7 @@ public class Cart {
     public String getCode() {
         return code;
     }
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -23,6 +24,7 @@ public class Cart {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -30,6 +32,7 @@ public class Cart {
     public int getPrice() {
         return price;
     }
+
     public void setPrice(int price) {
         this.price = price;
     }
@@ -37,6 +40,7 @@ public class Cart {
     public int getQuantity() {
         return quantity;
     }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ChumonServlet")
 public class ChumonServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // パラメータを取得
@@ -37,8 +38,8 @@ public class ChumonServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //セッションからカートリストとログインユーザを得ます
         HttpSession session = request.getSession();
-        List<Cart> cartList = (List<Cart>)session.getAttribute("cartList");
-        String userId = (String)session.getAttribute("userId");
+        List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
+        String userId = (String) session.getAttribute("userId");
 
         //ログイン判定
         if (userId == null || userId.equals("")) {
