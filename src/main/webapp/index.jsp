@@ -3,6 +3,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>ログインしてください</h2>
+<h2>まずはログインしましょう!</h2>
 </body>
 </html>

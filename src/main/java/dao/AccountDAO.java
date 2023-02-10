@@ -9,11 +9,7 @@ import java.sql.SQLException;
 import model.Account;
 import model.Login;
 
-public class AccountDAO {
-    // データベース接続に使用する情報
-    private final String JDBC_URL = "jdbc:mysql://10.16.141.200/R3A105";
-    private final String DB_USER = "R3A105";
-    private final String DB_PASS = "password";
+public class AccountDAO extends DAOParam {
 
     public Account findByLogin(Login login) {
         Account account = null;
@@ -54,5 +50,37 @@ public class AccountDAO {
         }
         // 見つかったユーザーまたはnullを返す
         return account;
+    }
+
+    public void insertAccount(Account account) {
+        // データベースへ接続
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
+            // SQL文の準備
+            String sql = "INSERT INTO ACCOUNT (USER_ID, PASS, MAIL, NAME, AGE) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            // パラメータの設定
+            preparedStatement.setString(1, account.getUserId());
+            preparedStatement.setString(2, account.getPass());
+            preparedStatement.setString(3, account.getMail());
+            preparedStatement.setString(4, account.getName());
+            preparedStatement.setInt(5, account.getAge());
+
+            // SQL実行
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deleteUser(String userId) {
+        // データベースへ接続
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
+            String sql = "DELETE FROM ACCOUNT WHERE USER_ID = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, userId);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

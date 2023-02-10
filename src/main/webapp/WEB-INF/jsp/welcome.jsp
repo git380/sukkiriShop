@@ -12,7 +12,7 @@
 <ul>
     <c:if test="${empty sessionScope.userId}">
         <li><a href="/sukkiriShop/LoginServlet">ログイン</a></li>
-        <li><a href="/sukkiriShop/">ユーザ登録:存在しませんので余力があれば作ってみてください。</a></li>
+        <li><a href="/sukkiriShop/RegisterServlet">ユーザ登録</a></li>
     </c:if>
     <c:if test="${not empty sessionScope.userId}">
         <li><a href="/sukkiriShop/LogoutServlet">ログアウト</a></li>
